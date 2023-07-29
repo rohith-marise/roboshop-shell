@@ -1,4 +1,3 @@
-#Shell script to install frontend nginx server
 yum install nginx -y
 
 cp nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
@@ -10,5 +9,5 @@ unzip /tmp/frontend.zip
 
 systemctl enable nginx
 systemctl restart nginx
-systemctl status nginx
-echo "Frontend is ready to use"
+
+
