@@ -10,3 +10,4 @@ unzip /tmp/frontend.zip
 
 systemctl enable nginx
 systemctl restart nginx | tail -f /var/log/messages
+echo "Frontend is ready to use"
