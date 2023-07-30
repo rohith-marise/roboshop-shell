@@ -12,7 +12,7 @@ systemctl daemon-reload
 
 #Mysql comes with centos defaultly for client we can install any version
 yum install mysql -y
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql.devrohiops.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 
 systemctl enable shipping
 systemctl restart shipping
