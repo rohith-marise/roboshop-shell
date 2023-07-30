@@ -1,4 +1,3 @@
-set-hostname shipping
 cp shipping.service /etc/systemd/system/shipping.service
 yum install maven -y
 useradd roboshop
