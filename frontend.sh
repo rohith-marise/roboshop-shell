@@ -1,3 +1,4 @@
+set-hostname frontend
 yum install nginx -y
 
 cp nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf

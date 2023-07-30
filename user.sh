@@ -1,3 +1,4 @@
+set-hostname user
 cp user.service /etc/systemd/system/user.service
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
