@@ -1,3 +1,4 @@
+log=/tmp/roboshop.log
 func_apppreq() {
    echo -e "\e[35m >>>>>> Create ${component} Service <<<<< \e[0m"
    cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
@@ -23,7 +24,6 @@ func_systemd() {
 }
 
 func_nodejs() {
-  log=/tmp/roboshop.log
   echo -e "\e[35m >>>>>> Create MongoDB Repo <<<<< \e[0m"
   cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
   echo -e "\e[35m >>>>>> Install Nodejs Repo <<<<< \e[0m"
