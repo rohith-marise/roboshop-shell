@@ -26,24 +26,25 @@ func_systemd() {
 }
 
 func_schema_steup() {
-  if [ "${schema_type}" == "mongodb" ] ; then
-    echo -e "\e[35m >>>>>> Install Mongo Client <<<<< \e[0m"
-    yum install mongodb-org-shell -y &>>${log}
-    echo -e "\e[35m >>>>>> Load ${component} Schema <<<<< \e[0m"
-    mongo --host mongodb.devrohiops.online </app/schema/${component}.js &>>${log}
-  if
-  
-  if [ "${schema_type}" == "mysql" ] ; then
-     echo -e "\e[35m >>>>>> Install Mysql Client <<<<< \e[0m"
-     #Mysql comes with centos default for client we can install any version
-     yum install mysql -y &>>${log}
-     echo -e "\e[35m >>>>>> Load ${component} Schema <<<<< \e[0m"
-     mysql -h mysql.devrohiops.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>${log}
-  fi
+   if [ "${schema_type}" == "mongodb" ] ; then
+      echo -e "\e[35m >>>>>> Install Mongo Client <<<<< \e[0m"
+      yum install mongodb-org-shell -y &>>${log}
+      echo -e "\e[35m >>>>>> Load ${component} Schema <<<<< \e[0m"
+      mongo --host mongodb.devrohiops.online </app/schema/${component}.js &>>${log}
+    if
+
+    if [ "${schema_type}" == "mysql" ] ; then
+       echo -e "\e[35m >>>>>> Install Mysql Client <<<<< \e[0m"
+       #Mysql comes with centos default for client we can install any version
+       yum install mysql -y &>>${log}
+       echo -e "\e[35m >>>>>> Load ${component} Schema <<<<< \e[0m"
+       mysql -h mysql.devrohiops.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>${log}
+    fi
 }
 
 
-  func_nodejs() {
+
+func_nodejs() {
     echo -e "\e[35m >>>>>> Create MongoDB Repo <<<<< \e[0m"
     cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
     echo -e "\e[35m >>>>>> Install Nodejs Repo <<<<< \e[0m"
@@ -59,7 +60,6 @@ func_schema_steup() {
     func_schema_steup
 
     func_systemd
-
 }
 
 func_java() {
