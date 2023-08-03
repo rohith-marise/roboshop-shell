@@ -1,5 +1,6 @@
 log=/tmp/roboshop.log
 func_apppreq() {
+
    echo -e "\e[35m >>>>>> Create ${component} Service <<<<< \e[0m"
    cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
    echo -e "\e[35m >>>>>> Create Application User <<<<< \e[0m"
