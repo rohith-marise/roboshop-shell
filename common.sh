@@ -40,7 +40,6 @@ func_schema_steup() {
      echo -e "\e[35m >>>>>> Load ${component} Schema <<<<< \e[0m"
      mysql -h mysql.devrohiops.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>${log}
   fi
-   
 }
 
 
@@ -98,6 +97,7 @@ func_golang() {
   yum install golang -y &>>${log}
 
   func_apppreq
+
   echo -e "\e[35m >>>>>> Build Golang  <<<<< \e[0m"
   go mod init ${component} &>>${log}
   go get &>>${log}
