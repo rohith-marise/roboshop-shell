@@ -43,22 +43,23 @@ func_schema_steup() {
    
 }
 
-func_nodejs() {
-  echo -e "\e[35m >>>>>> Create MongoDB Repo <<<<< \e[0m"
-  cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
-  echo -e "\e[35m >>>>>> Install Nodejs Repo <<<<< \e[0m"
-  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
-  echo -e "\e[35m >>>>>> Install Nodejs <<<<< \e[0m"
-  yum install nodejs -y &>>${log}
 
-  func_apppreq
+  func_nodejs() {
+    echo -e "\e[35m >>>>>> Create MongoDB Repo <<<<< \e[0m"
+    cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
+    echo -e "\e[35m >>>>>> Install Nodejs Repo <<<<< \e[0m"
+    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
+    echo -e "\e[35m >>>>>> Install Nodejs <<<<< \e[0m"
+    yum install nodejs -y &>>${log}
 
-  echo -e "\e[35m >>>>>> Download Nodejs Dependencies <<<<< \e[0m"
-  npm install &>>${log}
- 
-  func_schema_steup 
- 
-  func_systemd
+    func_apppreq
+
+    echo -e "\e[35m >>>>>> Download Nodejs Dependencies <<<<< \e[0m"
+    npm install &>>${log}
+
+    func_schema_steup
+
+    func_systemd
 
 }
 
