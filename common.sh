@@ -20,13 +20,13 @@ func_apppreq() {
    fi
    func_exit_status
 
-   echo -e "\e[35m >>>>>> Clean up existing App Content <<<<< \e[0m"
+   echo -e "\e[35m >>>>>> Clean Up Existing App Content <<<<< \e[0m"
    rm -rf /app &>>${log}
    func_exit_status
-   echo -e "\e[35m >>>>>> Create App directory <<<<< \e[0m"
+   echo -e "\e[35m >>>>>> Create App Directory <<<<< \e[0m"
    mkdir /app &>>${log}
    func_exit_status
-   echo -e "\e[35m >>>>>> Download Application content <<<<< \e[0m"
+   echo -e "\e[35m >>>>>> Download Application Content <<<<< \e[0m"
    curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
    func_exit_status
    echo -e "\e[35m >>>>>> Extract Application Content <<<<< \e[0m"
@@ -108,7 +108,7 @@ func_java() {
 
 func_python() {
 
-  echo -e "\e[35m >>>>>> Install python packages <<<<< \e[0m"
+  echo -e "\e[35m >>>>>> Install Python Packages <<<<< \e[0m"
   yum install python36 gcc python3-devel -y &>>${log}
   func_exit_status
 
@@ -122,7 +122,7 @@ func_python() {
 }
 
 func_golang() {
-  echo -e "\e[35m >>>>>> Install Golang packages <<<<< \e[0m"
+  echo -e "\e[35m >>>>>> Install Golang Packages <<<<< \e[0m"
   yum install golang -y &>>${log}
   func_exit_status
 
