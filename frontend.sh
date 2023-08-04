@@ -3,7 +3,7 @@ source common.sh
 
 echo -e "\e[35m >>>>>> Installing Nginx Server <<<<< \e[0m"
 yum install nginx -y &>>${log}
-
+func_exit_status
 
 echo -e "\e[35m >>>>>> Adding Reverse proxy configuration <<<<< \e[0m"
 cp nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log}
