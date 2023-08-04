@@ -138,3 +138,5 @@ func_golang() {
   func_systemd
 
 }
+
+#rabbit mq roboshop1 , mysql RoboShop@1
