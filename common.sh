@@ -27,7 +27,6 @@ func_apppreq() {
    func_exit_status
    echo -e "\e[35m >>>>>> Extract Application Content <<<<< \e[0m"
    cd /app &>>${log}
-   func_exit_status
    unzip /tmp/${component}.zip &>>${log}
    cd /app &>>${log}
    func_exit_status
