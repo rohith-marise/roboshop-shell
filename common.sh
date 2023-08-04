@@ -6,7 +6,7 @@ func_exit_status() {
   else
     echo -e "\e[31 FAILED \e[0m"
   fi
-  echo $?
+
 }
 func_apppreq() {
 
