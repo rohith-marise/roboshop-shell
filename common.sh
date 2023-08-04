@@ -139,4 +139,4 @@ func_golang() {
 
 }
 
-#rabbit mq roboshop1 , mysql RoboShop@1
+#payment roboshop123 , mysql RoboShop@1 , rabbitmq roboshop123
