@@ -14,8 +14,12 @@ func_apppreq() {
    cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
    func_exit_status
    echo -e "\e[35m >>>>>> Create Application User <<<<< \e[0m"
+   id roboshop
+   if [ $? -ne 0 ] ; then
    useradd roboshop &>>${log}
+   fi
    func_exit_status
+
    echo -e "\e[35m >>>>>> Clean up existing App Content <<<<< \e[0m"
    rm -rf /app &>>${log}
    func_exit_status
