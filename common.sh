@@ -128,6 +128,7 @@ func_golang() {
 
   func_apppreq
 
+  sed -i "s/rabbitmq_app_password/${rabbitmq_app_password}/" /etc/systemd/system/${component}.service
   echo -e "\e[35m >>>>>> Build Golang  <<<<< \e[0m"
   go mod init ${component} &>>${log}
   go get &>>${log}
